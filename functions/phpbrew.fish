@@ -1,4 +1,10 @@
 function phpbrew -d "Brew & manage PHP versions" -a command
+  if not type -q phpbrew
+    echo "Please install phpbrew first!"
+    echo "See http://phpbrew.github.io/phpbrew for instructions."
+    return 1
+  end
+
   # Wrap the phpbrew executable and provide the necessary shell-side commands.
   switch $command
     case use
