@@ -6,7 +6,7 @@ function phpbrew -d "Brew & manage PHP versions" -a command
   end
 
   # Wrap the phpbrew executable and provide the necessary shell-side commands.
-  switch $command
+  switch "$command"
     case use
       if not set -q argv[2]
         if not set -q PHPBREW_PHP
