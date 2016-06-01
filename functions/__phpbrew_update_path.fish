@@ -5,6 +5,15 @@ function __phpbrew_update_path
     echo "$p"
   end | grep -v "^$PHPBREW_ROOT")
 
+  test -d $PHPBREW_HOME
+    or mkdir -p $PHPBREW_HOME
+
+  test -d $PHPBREW_ROOT
+    or mkdir -p $PHPBREW_ROOT
+
+  test -d $PHPBREW_BIN
+    or mkdir -p $PHPBREW_BIN
+
   # Add the current PHP version paths to the path if set.
   set -q PHPBREW_BIN
     and set -gx PATH $PHPBREW_BIN $PATH
