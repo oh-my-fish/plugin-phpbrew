@@ -3,7 +3,7 @@ function __phpbrew_update_path
   # Strip old phpbrew paths from the path.
   set -gx PATH (for p in $PATH
     echo "$p"
-  end | grep -v "^$PHPBREW_ROOT")
+  end | grep -v "2> $PHPBREW_ROOT")
 
   test -d $PHPBREW_HOME
     or mkdir -p $PHPBREW_HOME
